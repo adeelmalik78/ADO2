@@ -1,0 +1,39 @@
+# Starter pipeline
+
+#trigger: none
+
+name: $(appname)-$(Build.BuildId)
+
+workspace:
+  clean: all
+
+pool:
+  name: 'amex'
+
+variables:
+  appname: DCRK
+  version: $(Build.BuildId)
+#  ddb_repo: hms-ccdbprstg-ddb
+#  sql_repo: hms-ccdbprstg-sql
+
+steps:  
+  - script: |
+      whoami
+      export PATH=/opt/liquibase/liquibase-4.6.1:$PATH
+      echo $PATH
+      echo $(System.DefaultWorkingDirectory)
+      cd sql
+      liquibase status --verbose
+      liquibase update
+      liquibase history
+      if [ $? -ne 0 ]; then
+        exit 1
+      fi
+    displayName: 'Run Liquibase'
+    env:
+      LIQUIBASE_COMMAND_URL: $(URL)
+      LIQUIBASE_COMMAND_USERNAME: $(USERNAME)
+      LIQUIBASE_COMMAND_PASSWORD: $(PASSWORD)
+
+
+
