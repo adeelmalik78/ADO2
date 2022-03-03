@@ -8,11 +8,20 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liqui
 http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd" >
 
+
+    <!-- <includeAll path="sql/main/releaseMarch2022/100_ddl/" />
+    <includeAll path="sql/main/releaseMarch2022/200_dml/" /> -->
+
+    <includeAll path="sql/main/releaseApril2022/100_ddl/" />
+    <includeAll path="sql/main/releaseApril2022/200_dml/" />
+
+
     <!-- <includeAll path="main/" /> -->
 
-    <includeAll path="sql/main/100_ddl/" />
-    <includeAll path="sql/main/200_dml/" />
+    <!-- <includeAll path="sql/main/100_ddl/" />
+    <includeAll path="sql/main/200_dml/" /> -->
     <!-- <includeAll path="main/DB_XML/" /> -->
+
 
     <include file="sql/main/DB_XML/changelog_dml.xml" relativeToChangelogFile="true" />
     
