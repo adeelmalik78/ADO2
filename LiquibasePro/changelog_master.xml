@@ -18,15 +18,15 @@ http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibas
 
     <!-- <includeAll path="main/" /> -->
 
-    <!-- <includeAll path="sql/main/100_ddl/" />
-    <includeAll path="sql/main/200_dml/" /> -->
+    <includeAll path="sql/main/100_ddl/" />
+    <includeAll path="sql/main/200_dml/" />
     <!-- <includeAll path="main/DB_XML/" /> -->
 
 
-    <include file="sql/main/DB_XML/changelog_dml.xml" relativeToChangelogFile="true" />
+    <!-- <include file="sql/main/DB_XML/changelog_dml.xml" relativeToChangelogFile="true" /> -->
     
-    <!-- <include file="main/100_ddl/01_create_table_without_precondition.sql"/>
-    <include file="main/100_ddl/02_create_table_with_precondition.sql"/>
+    <!-- <include file="sql/main/100_ddl/01_create_table_without_precondition.sql"/> -->
+    <!-- <include file="main/100_ddl/02_create_table_with_precondition.sql"/>
     <include file="main/100_ddl/04_add_column.sql"/>
     <include file="main/100_ddl/17_create_index.sql"/> -->
 
